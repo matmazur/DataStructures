@@ -2,7 +2,7 @@ package com.infoshareacademy.mateuszmazur.task01;
 
 import java.util.Objects;
 
-public class City {
+public class City implements Comparable {
     private String name;
     private String province;
     private int population;
@@ -52,7 +52,8 @@ public class City {
     public String toString() {
         return "[name='" + name + '\'' +
                 ", province='" + province + '\'' +
-                ", population=" + population + "]";
+                ", population=" + population + "]"+
+                country.getcountryName();
     }
 
 
@@ -72,5 +73,12 @@ public class City {
         return city.getName().equals(getName()) &&
                 city.getProvince().equals(getProvince()) &&
                 city.getPopulation() == getPopulation();
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        City c = (City)o;
+
+        return getName().compareTo(c.getName()) ;
     }
 }

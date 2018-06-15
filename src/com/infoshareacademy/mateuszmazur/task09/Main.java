@@ -41,7 +41,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        Locale locale = new Locale("PL", "pl");
+        Locale locale = new Locale("EN", "us");
 
         System.out.println(DateFormat.getDateTimeInstance(DateFormat.MEDIUM,DateFormat.MEDIUM ,locale).format(new Date()));
 
