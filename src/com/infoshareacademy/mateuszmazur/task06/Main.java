@@ -55,32 +55,3 @@ public class Main {
 
 
 }
-
-
-//            for (int i = 0; i < surnames.size(); i++) {
-//
-//                List<Person> temp = new ArrayList<>();
-//
-//
-//                for (int j = 0; j < set.size(); j++) {
-//
-//                    if (surnames.get(i).equals(personList.get(j).getSurname()))
-//                        temp.add(personList.get(j));
-//                }
-//
-//
-//                map.put(surnames.get(i), temp);
-//            }
-
-
-//    int index =0;
-//            for (Person s:personSet){
-//
-//                    for (String str:surnamesSet){
-//
-//
-//                    if (str.equals(s.getSurname()){
-//
-//                    }
-//                    }
-//                    }
