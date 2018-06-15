@@ -16,51 +16,22 @@ public class Main {
         Path path = Paths.get(fileName);
 
         try {
-            List<String> list = Files.readAllLines(path);
-            Set<Person> set = createObjectFromList(list);
-            list=new ArrayList<Person>() {
+            List<String> lines = Files.readAllLines(path);
+            Set<Person> personSet = createObjectFromList(lines);
+            List<Person> personList = new ArrayList<>(personSet);
+            Set<String> surnamesSet = new TreeSet<>();
+
+            for (Person s : personSet) {
+                surnamesSet.add(s.getSurname());
             }
-            Map<String,List<Person>> map = new TreeMap<>();
-
-            set.forEach(System.out::println);
-
+            List<String> surnamesList = new ArrayList<>(surnamesSet);
+            surnamesList.forEach(System.out::println);
 
 
+            Map<String, List<Person>> map = Person.putIntoMap(surnamesList, personList);
 
-
-            Set<String> sur = new TreeSet<>();
-            for (Person s : set){
-                sur.add(s.getSurname());
-            }
-
-
-
-
-
-
-            List<String> surnames = new ArrayList<>(sur);
-            surnames.forEach(System.out::println);
-
-
-            for (int i=0;i<surnames.size();i++){
-
-                List <Person> temp = new ArrayList<>();
-
-
-                for (int j=0;j<set.size();j++){
-
-                    if (surnames.get(i))
-                }
-
-
-                map.put(surnames, )
-
-
-
-
-            }
-
-
+            if (map.containsKey("Tabat"))
+                System.out.println(map.get("Tabat"));
 
 
         } catch (IOException e) {
@@ -86,5 +57,30 @@ public class Main {
 }
 
 
+//            for (int i = 0; i < surnames.size(); i++) {
+//
+//                List<Person> temp = new ArrayList<>();
+//
+//
+//                for (int j = 0; j < set.size(); j++) {
+//
+//                    if (surnames.get(i).equals(personList.get(j).getSurname()))
+//                        temp.add(personList.get(j));
+//                }
+//
+//
+//                map.put(surnames.get(i), temp);
+//            }
 
 
+//    int index =0;
+//            for (Person s:personSet){
+//
+//                    for (String str:surnamesSet){
+//
+//
+//                    if (str.equals(s.getSurname()){
+//
+//                    }
+//                    }
+//                    }

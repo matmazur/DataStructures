@@ -1,6 +1,6 @@
 package com.infoshareacademy.mateuszmazur.task06;
 
-import java.util.Objects;
+import java.util.*;
 
 public class Person {
 
@@ -56,9 +56,37 @@ public class Person {
     }
 
 
-    public String getName() {return name;}
-    public String getSurname() {return surname;}
-    public int getAge() {return age;}
+    public static Map<String, List<Person>> putIntoMap(List<String> surname, List<Person> personList) {
+
+        Map<String, List<Person>> map = new TreeMap<>();
+
+        for (int i = 0; i < surname.size(); i++) {
+
+            List<Person> temp = new ArrayList<>();
+
+            for (int j = 0; j < personList.size(); j++) {
+
+                if (surname.get(i).equals(personList.get(j).getSurname()))
+                    temp.add(personList.get(j));
+            }
+            map.put(surname.get(i), temp);
+        }
+
+        return map;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public int getAge() {
+        return age;
+    }
 
 
 }
