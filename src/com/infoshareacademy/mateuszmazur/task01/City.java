@@ -1,6 +1,8 @@
 package com.infoshareacademy.mateuszmazur.task01;
 
-public class City{
+import java.util.Objects;
+
+public class City {
     private String name;
     private String province;
     private int population;
@@ -48,11 +50,27 @@ public class City{
 
     @Override
     public String toString() {
-        return "City{" +
-                "name='" + name + '\'' +
+        return "[name='" + name + '\'' +
                 ", province='" + province + '\'' +
-                ", population=" + population +'\'' +
-                ", country=" + country.getcountryName() +
-                '}';
+                ", population=" + population + "]";
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name + province + population);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+        if (!(o instanceof City)) return false;
+
+        City city = (City) o;
+
+        return city.getName().equals(getName()) &&
+                city.getProvince().equals(getProvince()) &&
+                city.getPopulation() == getPopulation();
     }
 }

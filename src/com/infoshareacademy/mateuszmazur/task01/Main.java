@@ -7,9 +7,11 @@ public class Main {
         Country pan = new Country("Polska");
         pan.add(new City("Gdańsk", "Pomorskie", 500000));
         pan.add(new City("Warszawa", "Mazowieckie", 1735000));
+        pan.add(new City("Warszawa", "Mazowieckie", 1735000));
 
 
-        pan.show();
+        System.out.println(pan.toString()+"\n");
+
 
 
     }

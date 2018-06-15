@@ -1,7 +1,9 @@
 package com.infoshareacademy.mateuszmazur.task01;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Country {
     private int reg;
@@ -9,13 +11,13 @@ public class Country {
 
 
 
-    List<City> cities;
+    private Set<City> cities;
 
-    public List<City> getCities() {
+    public Set<City> getCities() {
         return cities;
     }
 
-    public void setCities(List<City> cities) {
+    public void setCities(Set<City> cities) {
         this.cities = cities;
     }
 
@@ -31,7 +33,7 @@ public  Country(){}
 
     public Country(String countryName) {
         this.countryName = countryName;
-        cities = new ArrayList<>();
+        cities = new HashSet<>();
         reg = 0;
     }
 
@@ -51,4 +53,10 @@ public  Country(){}
         }
     }
 
+
+    @Override
+    public String toString() {
+        return "[" + countryName + "]" +
+                "\nCities:\n" + cities;
+    }
 }
